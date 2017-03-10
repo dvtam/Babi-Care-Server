@@ -16,14 +16,16 @@ import java.io.IOException;
  * @author TAM
  */
 public class BabiCare_Server {
-private static FCMNotification mNotification;
+
+    private static FCMNotification mNotification;
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        //mNotification=new FCMNotification();
-         System.out.println("Server is running . . . \nPORT: "+Config.PORT);
-       ServerSocket listener = new ServerSocket(Config.PORT);
+        mNotification = new FCMNotification();
+        System.out.println("Server is running . . . \nPORT: " + Config.PORT);
+        ServerSocket listener = new ServerSocket(Config.PORT);
         try {
             while (true) {
                 new Connect.Handler(listener.accept()).start();
@@ -32,5 +34,5 @@ private static FCMNotification mNotification;
             listener.close();
         }
     }
-    
+
 }
