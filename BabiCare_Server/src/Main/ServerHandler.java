@@ -18,6 +18,7 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
     LoopBackTimeStamp ts = (LoopBackTimeStamp) msg;
     ts.setRecvTimeStamp(System.nanoTime());
     System.out.println("loop delay in ms : " + 1.0 * ts.timeLapseInNanoSecond() / 1000000L);
+   
   }
  
   // Here is how we send out heart beat for idle to long
