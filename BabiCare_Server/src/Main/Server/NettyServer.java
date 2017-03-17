@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Main;
+package Main.Server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
@@ -16,8 +16,10 @@ import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.concurrent.DefaultEventExecutorGroup;
 import io.netty.util.concurrent.EventExecutorGroup;
 import java.io.IOException;
-import Main.TimeStampDecoder;
-import Main.TimeStampEncoder;
+import Data.TimeStampDecoder;
+import Data.TimeStampDecoder;
+import Data.TimeStampEncoder;
+import Data.TimeStampEncoder;
 
 public class NettyServer {
 
@@ -51,5 +53,6 @@ public class NettyServer {
 
         bootstrap.childOption(ChannelOption.SO_KEEPALIVE, true);
         bootstrap.bind(19000).sync();
+        
     }
 }
